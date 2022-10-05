@@ -102,32 +102,30 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 대각선체크
-       
-        for(int i = 5; i < 19; i++)
+        // 대각선체크(LeftUp-->RightDown 아래부분)
+        for(int i = 4; i < 19; i++)
         {
             int templ = i;
             for(int j = 0; j < i; j++)
             {
                 if (go_Array[templ, j] != null)
                 {
-                    if (currentRock == " ")
+                    if (currentRock == "")
                     {
-                        currentRock = go_Array[templ, i].gameObject.tag;
+                        currentRock = go_Array[templ, j].gameObject.tag;
                         count++;
                         checkOverFive(count, currentRock);
                     }
                     else
                     {
-                        if (currentRock == go_Array[templ, i].gameObject.tag)
+                        if (currentRock == go_Array[templ, j].gameObject.tag)
                         {
                             count++;
                             checkOverFive(count, currentRock);
                         }
                         else
                         {
-                            currentRock = go_Array[templ, i].gameObject.tag;
-                            count++;
+                            count = 1;
                             checkOverFive(count, currentRock);
                         }
 
@@ -136,12 +134,98 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    currentRock = " ";
+                    currentRock = "";
                     count = 0;
                 }
                 templ--;
             }
         }
+
+        // 대각선체크(LeftUp-->RightDown 위부분)___________디버그필요함!!
+        for (int i =14 ; i>0 ; i--)
+        {
+            int templ = i;
+           
+            for (int j = 18; j >=i; j--)
+            {
+                if (go_Array[templ, j] != null)
+                {
+                    if (currentRock == "")
+                    {
+                        currentRock = go_Array[templ, j].gameObject.tag;
+                        count++;
+                        checkOverFive(count, currentRock);
+                    }
+                    else
+                    {
+                        if (currentRock == go_Array[templ, j].gameObject.tag)
+                        {
+                            count++;
+                            checkOverFive(count, currentRock);
+                        }
+                        else
+                        {
+                            count = 1;
+                            checkOverFive(count, currentRock);
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    currentRock = "";
+                    count = 0;
+                }
+                templ++;
+                
+            }
+            
+        }
+
+
+        // 대각선체크(RightUp-->LeftDown 아래부분)
+        for(int i = 0; i <=14; i++)
+        {
+            int templ = i;
+            for(int j = 0; j <=18-i; j++)
+            {
+                if (go_Array[templ, j] != null)
+                {
+                    if (currentRock == "")
+                    {
+                        currentRock = go_Array[templ, j].gameObject.tag;
+                        count++;
+                        checkOverFive(count, currentRock);
+                    }
+                    else
+                    {
+                        if (currentRock == go_Array[templ, j].gameObject.tag)//
+                        {
+                            count++;
+                            checkOverFive(count, currentRock);
+                        }
+                        else
+                        {
+                            count = 1;//
+                            checkOverFive(count, currentRock);
+                        }
+                    }
+
+                }
+                else
+                {
+                    currentRock = "";//
+                    count = 0;
+
+                }
+                templ++;
+            }
+        }
+
+        // 대각선체크(LeftUp-->RightDown 위부분)
+
+
     }
 
     void checkOverFive(int count, string currentRock)
