@@ -102,13 +102,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
-<<<<<<< HEAD
         // 대각선체크(LeftUp-->RightDown 아래부분)
-        for(int i = 4; i < 19; i++)
-=======
-        // 대각선체크(LeftUp-->RightDown 아래 반쪽)
-        for(int i = 4; i < 18; i++)
->>>>>>> be852d85d814db17cefdafec6bb6f4b92c03f100
+        for(int i = 4; i <=18; i++)
         {
             int templ = i;
             for(int j = 0; j <= i; j++)
@@ -130,13 +125,8 @@ public class GameManager : MonoBehaviour
                         }
                         else
                         {
-<<<<<<< HEAD
                             count = 1;
-=======
                             currentRock = go_Array[templ, j].gameObject.tag;
-                            count++;
->>>>>>> be852d85d814db17cefdafec6bb6f4b92c03f100
-                            checkOverFive(count, currentRock);
                         }
 
 
@@ -151,20 +141,11 @@ public class GameManager : MonoBehaviour
             }
         }
 
-<<<<<<< HEAD
         // 대각선체크(LeftUp-->RightDown 위부분)___________디버그필요함!!
         for (int i =14 ; i>0 ; i--)
         {
             int templ = i;
-           
             for (int j = 18; j >=i; j--)
-=======
-        // 대각선체크(LeftUp-->RightDown 위 반쪽)
-        for (int i=0; i<=14; i++)
-        {
-            int templ = i;
-            for (int j = 18; j>=i ; j--)
->>>>>>> be852d85d814db17cefdafec6bb6f4b92c03f100
             {
                 if (go_Array[templ, j] != null)
                 {
@@ -183,13 +164,9 @@ public class GameManager : MonoBehaviour
                         }
                         else
                         {
-<<<<<<< HEAD
                             count = 1;
-=======
                             currentRock = go_Array[templ, j].gameObject.tag;
-                            count++;
->>>>>>> be852d85d814db17cefdafec6bb6f4b92c03f100
-                            checkOverFive(count, currentRock);
+                            
                         }
 
 
@@ -201,8 +178,6 @@ public class GameManager : MonoBehaviour
                     count = 0;
                 }
                 templ++;
-<<<<<<< HEAD
-                
             }
             
         }
@@ -247,14 +222,45 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // 대각선체크(LeftUp-->RightDown 위부분)
 
-=======
+        // 대각선체크(RightUp-->LeftDown 위부분)
+        for(int i = 4; i <= 18; i++)
+        {
+            int templ = i;
+            for(int j = 18; j>=18 - i; j--)
+            {
+                if (go_Array[templ, j] != null)
+                {
+                    if (currentRock == "")
+                    {
+                        currentRock = go_Array[templ, j].gameObject.tag;
+                        count++;
+                        checkOverFive(count,currentRock);
+                    }
+                    else
+                    {
+                        if (currentRock == go_Array[templ, j].gameObject.tag)
+                        {
+                            count++;
+                            checkOverFive(count, currentRock);
+                        }
+                        else
+                        {
+                            count = 1;
+                            currentRock = go_Array[templ, j].gameObject.tag;
+                            checkOverFive(count, currentRock);
+                        }
+                    }
+                }
+                else
+                {
+                    currentRock = "";
+                    count = 0;
+                }
+
+                templ--;
             }
         }
-
-        // 대각선체크(RightUp-->LeftDown )
->>>>>>> be852d85d814db17cefdafec6bb6f4b92c03f100
 
     }
 
