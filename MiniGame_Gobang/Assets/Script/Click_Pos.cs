@@ -28,7 +28,6 @@ public class Click_Pos : MonoBehaviour
     {
         if (GameManager.Instance.isBlackTurn&& !IsClicked && !GameManager.Instance.isGameFinish)
         {
-            
             GameObject black = Instantiate(go_black, transform.position, Quaternion.identity);
             GameManager.Instance.go_Array[index_X,index_Y] = black;
             GameManager.Instance.isBlackTurn = false;
@@ -36,6 +35,8 @@ public class Click_Pos : MonoBehaviour
 
             GameManager.Instance.CheckGameFinish();
             Debug.Log("흙돌 소환");
+
+            //StartCoroutine(AiWhiteRock());//
         }
         else if(!GameManager.Instance.isBlackTurn && !IsClicked && !GameManager.Instance.isGameFinish)
         {
@@ -46,7 +47,32 @@ public class Click_Pos : MonoBehaviour
 
             GameManager.Instance.CheckGameFinish();
             Debug.Log("백돌 소환");
+
+            //StartCoroutine(AiBlackRock());//
         }
        
     }
+    //IEnumerator AiWhiteRock()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
+    //    GameObject white = Instantiate(go_white, transform.position, Quaternion.identity);
+    //    GameManager.Instance.go_Array[index_X, index_Y] = white;
+    //    GameManager.Instance.isBlackTurn = true;
+    //    IsClicked = true;
+
+    //    GameManager.Instance.CheckGameFinish();
+    //    Debug.Log("백돌 소환");
+    //}
+    //IEnumerator AiBlackRock()
+    //{
+    //    yield return new WaitForSeconds(0.2f);
+    //    GameObject black = Instantiate(go_black, transform.position, Quaternion.identity);
+    //    GameManager.Instance.go_Array[index_X, index_Y] = black;
+    //    GameManager.Instance.isBlackTurn = false;
+    //    IsClicked = true;
+
+    //    GameManager.Instance.CheckGameFinish();
+    //    Debug.Log("흙돌 소환");
+    //}
+
 }
