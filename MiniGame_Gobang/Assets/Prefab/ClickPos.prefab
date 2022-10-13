@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2784023495828765802}
   - component: {fileID: 95848518291870940}
   - component: {fileID: 3495119745072150448}
+  - component: {fileID: 807041276756322667}
   m_Layer: 0
   m_Name: ClickPos
   m_TagString: Untagged
@@ -117,10 +118,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6338000271253325821}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58a6b34f27d45f944ba9ef0dcf38a9ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   go_black: {fileID: 2109113610587551671, guid: 3b0eb98ead663074a9d6bbcd80fd9414, type: 3}
   go_white: {fileID: 3166277815005899503, guid: 025c20bf9503c164b9ef8007533f7fba, type: 3}
+  index_X: 0
+  index_Y: 0
+  IsClicked: 0
+--- !u!114 &807041276756322667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6338000271253325821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c43eb7e9737094ab8efc0bef730d24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_black: {fileID: 2109113610587551671, guid: 3b0eb98ead663074a9d6bbcd80fd9414, type: 3}
+  go_white: {fileID: 3166277815005899503, guid: 025c20bf9503c164b9ef8007533f7fba, type: 3}
+  index_X: 0
+  index_Y: 0
+  IsClicked: 0

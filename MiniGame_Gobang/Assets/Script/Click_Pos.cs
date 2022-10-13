@@ -7,7 +7,9 @@ public class Click_Pos : MonoBehaviour
 {
     public GameObject go_black;
     public GameObject go_white;
-    
+    //public GameObject go_aiBlack;
+    //public GameObject go_aiWhite;
+
     public int index_X;
     public int index_Y;
 
@@ -52,27 +54,5 @@ public class Click_Pos : MonoBehaviour
         }
        
     }
-    //IEnumerator AiWhiteRock()
-    //{
-    //    yield return new WaitForSeconds(0.2f);
-    //    GameObject white = Instantiate(go_white, transform.position, Quaternion.identity);
-    //    GameManager.Instance.go_Array[index_X, index_Y] = white;
-    //    GameManager.Instance.isBlackTurn = true;
-    //    IsClicked = true;
-
-    //    GameManager.Instance.CheckGameFinish();
-    //    Debug.Log("백돌 소환");
-    //}
-    //IEnumerator AiBlackRock()
-    //{
-    //    yield return new WaitForSeconds(0.2f);
-    //    GameObject black = Instantiate(go_black, transform.position, Quaternion.identity);
-    //    GameManager.Instance.go_Array[index_X, index_Y] = black;
-    //    GameManager.Instance.isBlackTurn = false;
-    //    IsClicked = true;
-
-    //    GameManager.Instance.CheckGameFinish();
-    //    Debug.Log("흙돌 소환");
-    //}
-
+    
 }
